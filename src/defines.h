@@ -188,7 +188,7 @@
 #define BUSY          0x01
 #define STDSPI        0x0A
 #define ALTSPI     0x0B
-#if defined (ARDUINO_ARCH_ESP32)
+#if defined (ARDUINO_ARCH_ESP32) || defined (GD32V)
 #define SPI_CLK       20000000        //Hz equivalent of 20MHz
 #else
 #define SPI_CLK       104000000       //Hz equivalent of 104MHz
@@ -234,6 +234,8 @@
 **********************************************************************************************/
 #elif defined (BOARD_RTL8195A)
 #define CS PC_4
+#elif defined (FLASH_SS_PIN)
+#define CS FLASH_SS_PIN
 #else
 #define CS SS
 #endif

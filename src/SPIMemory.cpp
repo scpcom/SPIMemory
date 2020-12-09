@@ -26,4 +26,8 @@
 
 #include "SPIMemory.h"
 
+#if defined (BOARD_GD32_RISCV_DEV)
+SPIClass SPI(PA7, PA6, PA5);
+#endif
+
 SPIMemory SPIMemory; // default instantiation of SPIMemory object
